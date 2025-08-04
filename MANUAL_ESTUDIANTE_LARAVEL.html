@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Completo - Sistema de Gestión de Cursos Laravel</title>
+    <style>
+        @media print {
+            body { font-size: 12px; }
+            .page-break { page-break-before: always; }
+            .no-break { page-break-inside: avoid; }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        
+        h4 {
+            color: #16a085;
+            margin-top: 20px;
+        }
+        
+        .concept-box {
+            background: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .important {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .file-structure {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+        }
+        
+        .example {
+            background: #e8f5e8;
+            border: 1px solid #c3e6c3;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        
+        .flow-diagram {
+            background: #f0f8ff;
+            border: 1px solid #b3d9ff;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 MANUAL COMPLETO - SISTEMA DE GESTIÓN DE CURSOS</h1>
+        <h2>Guía de Estudio para Estudiantes - Laravel Framework</h2>
+        
+        <div class="important">
+            <strong>🎯 OBJETIVO:</strong> Este manual te ayudará a entender cómo funciona un proyecto Laravel completo, 
+            desde los conceptos básicos hasta la implementación de funcionalidades avanzadas.
+        </div>
+
+        <!-- SECCIÓN 1: CONCEPTOS FUNDAMENTALES -->
+        <div class="page-break"></div>
+        <h2>📖 SECCIÓN 1: CONCEPTOS FUNDAMENTALES</h2>
+        
+        <h3>1.1 ¿Qué es Laravel?</h3>
+        <div class="concept-box">
+            <strong>Laravel</strong> es un framework de PHP que nos ayuda a crear aplicaciones web de forma más rápida y organizada. 
+            Es como un "esqueleto" que ya tiene muchas funciones útiles predefinidas.
+        </div>
+
+        <h3>1.2 ¿Qué es MVC?</h3>
+        <div class="concept-box">
+            <strong>MVC</strong> significa Modelo-Vista-Controlador. Es una forma de organizar el código:
+            <ul>
+                <li><strong>Modelo (M):</strong> Maneja los datos y la lógica de negocio</li>
+                <li><strong>Vista (V):</strong> Lo que ve el usuario (páginas web)</li>
+                <li><strong>Controlador (C):</strong> Conecta el modelo con la vista</li>
+            </ul>
+        </div>
+
+        <h3>1.3 ¿Qué es una Base de Datos?</h3>
+        <div class="concept-box">
+            Una <strong>base de datos</strong> es como una biblioteca digital donde guardamos toda la información de nuestra aplicación:
+            <ul>
+                <li>Información de usuarios</li>
+                <li>Datos de cursos</li>
+                <li>Calificaciones</li>
+                <li>Archivos</li>
+            </ul>
+        </div>
+
+        <h3>1.4 ¿Qué es AJAX?</h3>
+        <div class="concept-box">
+            <strong>AJAX</strong> permite que las páginas web se actualicen sin recargar completamente. 
+            En nuestro proyecto, se usa para cargar alumnos cuando seleccionas un curso.
+        </div>
+
+        <!-- SECCIÓN 2: ESTRUCTURA DEL PROYECTO -->
+        <div class="page-break"></div>
+        <h2>🏗️ SECCIÓN 2: ESTRUCTURA DEL PROYECTO LARAVEL</h2>
+
+        <h3>2.1 Carpetas Principales</h3>
+        <div class="file-structure">
+Gestion_Cursos/
+├── app/                    # Código principal de la aplicación
+│   ├── Http/
+│   │   ├── Controllers/    # Controladores (lógica de negocio)
+│   │   ├── Middleware/     # Filtros de seguridad
+│   │   └── Requests/       # Validación de formularios
+│   ├── Models/             # Modelos (interacción con base de datos)
+│   └── Services/           # Servicios adicionales
+├── database/
+│   ├── migrations/         # Estructura de la base de datos
+│   └── seeders/           # Datos de prueba
+├── resources/
+│   └── views/             # Páginas web (vistas)
+├── routes/
+│   └── web.php           # Definición de URLs
+├── storage/              # Archivos subidos
+└── public/               # Archivos públicos
+        </div>
+
+        <h3>2.2 ¿Qué hace cada carpeta?</h3>
+        
+        <h4>📁 app/ - Código Principal</h4>
+        <div class="example">
+            <strong>Controllers:</strong> Son como "jefes" que manejan las peticiones del usuario
+            <br><strong>Models:</strong> Son como "traductores" entre el código y la base de datos
+            <br><strong>Middleware:</strong> Son como "guardias de seguridad" que verifican permisos
+        </div>
+
+        <h4>📁 database/ - Base de Datos</h4>
+        <div class="example">
+            <strong>Migrations:</strong> Son como "planos" que definen cómo crear las tablas
+            <br><strong>Seeders:</strong> Son como "plantillas" que llenan la base de datos con datos de prueba
+        </div>
+
+        <h4>📁 resources/views/ - Páginas Web</h4>
+        <div class="example">
+            <strong>Vistas:</strong> Son las páginas HTML que ve el usuario
+            <br><strong>Layouts:</strong> Son como "moldes" que se reutilizan en varias páginas
+        </div>
+
+        <h4>📁 routes/ - URLs</h4>
+        <div class="example">
+            <strong>web.php:</strong> Define qué URL va a qué función del controlador
+        </div>
+
+        <!-- SECCIÓN 3: CÓMO FUNCIONAN LAS RUTAS -->
+        <div class="page-break"></div>
+        <h2>🛣️ SECCIÓN 3: CÓMO FUNCIONAN LAS RUTAS EN LARAVEL</h2>
+
+        <h3>3.1 ¿Qué es una Ruta?</h3>
+        <div class="concept-box">
+            Una <strong>ruta</strong> es como una dirección que conecta una URL con una función específica. 
+            Es como decir: "Cuando alguien visite esta dirección, ejecuta esta función".
+        </div>
+
+        <h3>3.2 Ejemplo de Ruta</h3>
+        <div class="code-block">
+Route::get('/alumnos', [AlumnoController::class, 'index'])->name('alumnos.index');
+        </div>
+        <div class="example">
+            <strong>Explicación:</strong>
+            <ul>
+                <li><strong>Route::get</strong> = Cuando alguien visite la página (GET)</li>
+                <li><strong>/alumnos</strong> = La dirección URL</li>
+                <li><strong>AlumnoController::class</strong> = El controlador que maneja esto</li>
+                <li><strong>'index'</strong> = La función específica que se ejecuta</li>
+                <li><strong>->name('alumnos.index')</strong> = Un nombre para referenciar esta ruta</li>
+            </ul>
+        </div>
+
+        <h3>3.3 Tipos de Rutas</h3>
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Uso</th>
+                <th>Ejemplo</th>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>Mostrar información</td>
+                <td>Ver lista de alumnos</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>Crear algo nuevo</td>
+                <td>Crear un nuevo alumno</td>
+            </tr>
+            <tr>
+                <td>PUT/PATCH</td>
+                <td>Actualizar algo existente</td>
+                <td>Editar datos de un alumno</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>Eliminar algo</td>
+                <td>Eliminar un alumno</td>
+            </tr>
+        </table>
+
+        <h3>3.4 Flujo de una Petición Web</h3>
+        <div class="flow-diagram">
+            <strong>1. Usuario hace clic en un enlace</strong>
+            <br>↓
+            <br><strong>2. Laravel busca la ruta correspondiente</strong>
+            <br>↓
+            <br><strong>3. Ejecuta el controlador indicado</strong>
+            <br>↓
+            <br><strong>4. El controlador obtiene datos del modelo</strong>
+            <br>↓
+            <br><strong>5. Se muestra la vista con los datos</strong>
+        </div>
+
+        <!-- SECCIÓN 4: MODELOS Y BASE DE DATOS -->
+        <div class="page-break"></div>
+        <h2>🗄️ SECCIÓN 4: MODELOS Y BASE DE DATOS</h2>
+
+        <h3>4.1 ¿Qué es un Modelo?</h3>
+        <div class="concept-box">
+            Un <strong>modelo</strong> es una clase que representa una tabla de la base de datos. 
+            Es como un "traductor" que convierte los datos de la base de datos en objetos que podemos usar en PHP.
+        </div>
+
+        <h3>4.2 Ejemplo de Modelo</h3>
+        <div class="code-block">
+class Alumno extends Model
+{
+    // Relación con inscripciones
+    public function inscripciones()
+    {
+        return $this->hasMany(Inscripcion::class);
+    }
+    
+    // Scope para alumnos activos
+    public function scopeActivos($query)
+    {
+        return $query->where('activo', true);
+    }
+}
+        </div>
+
+        <h3>4.3 ¿Qué son las Migraciones?</h3>
+        <div class="concept-box">
+            Las <strong>migraciones</strong> son archivos que definen la estructura de las tablas de la base de datos. 
+            Son como "planos de construcción" para crear las tablas.
+        </div>
+
+        <h3>4.4 Ejemplo de Migración</h3>
+        <div class="code-block">
+public function up()
+{
+    Schema::create('alumnos', function (Blueprint $table) {
+        $table->id();
+        $table->string('nombre');
+        $table->string('apellido');
+        $table->string('email')->unique();
+        $table->boolean('activo')->default(true);
+        $table->timestamps();
+    });
+}
+        </div>
+
+        <h3>4.5 ¿Qué son los Seeders?</h3>
+        <div class="concept-box">
+            Los <strong>seeders</strong> son archivos que llenan la base de datos con datos de prueba. 
+            Son útiles para probar la aplicación sin tener que crear datos manualmente.
+        </div>
+
+        <!-- SECCIÓN 5: CONTROLADORES -->
+        <div class="page-break"></div>
+        <h2>🎮 SECCIÓN 5: CONTROLADORES</h2>
+
+        <h3>5.1 ¿Qué es un Controlador?</h3>
+        <div class="concept-box">
+            Un <strong>controlador</strong> es una clase que maneja las peticiones del usuario. 
+            Es como un "jefe" que decide qué hacer cuando alguien visita una página.
+        </div>
+
+        <h3>5.2 Métodos Principales de un Controlador</h3>
+        <table>
+            <tr>
+                <th>Método</th>
+                <th>Propósito</th>
+                <th>Ejemplo</th>
+            </tr>
+            <tr>
+                <td>index()</td>
+                <td>Mostrar lista de elementos</td>
+                <td>Lista de todos los alumnos</td>
+            </tr>
+            <tr>
+                <td>create()</td>
+                <td>Mostrar formulario de creación</td>
+                <td>Formulario para crear alumno</td>
+            </tr>
+            <tr>
+                <td>store()</td>
+                <td>Guardar nuevo elemento</td>
+                <td>Guardar datos del nuevo alumno</td>
+            </tr>
+            <tr>
+                <td>show()</td>
+                <td>Mostrar elemento específico</td>
+                <td>Ver detalles de un alumno</td>
+            </tr>
+            <tr>
+                <td>edit()</td>
+                <td>Mostrar formulario de edición</td>
+                <td>Formulario para editar alumno</td>
+            </tr>
+            <tr>
+                <td>update()</td>
+                <td>Actualizar elemento</td>
+                <td>Guardar cambios del alumno</td>
+            </tr>
+            <tr>
+                <td>destroy()</td>
+                <td>Eliminar elemento</td>
+                <td>Eliminar un alumno</td>
+            </tr>
+        </table>
+
+        <h3>5.3 Ejemplo de Controlador</h3>
+        <div class="code-block">
+class AlumnoController extends Controller
+{
+    public function index()
+    {
+        $alumnos = Alumno::activos()->paginate(10);
+        return view('alumnos.index', compact('alumnos'));
+    }
+    
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'email' => 'required|email|unique:alumnos'
+        ]);
+        
+        Alumno::create($request->all());
+        return redirect()->route('alumnos.index');
+    }
+}
+        </div>
+
+        <!-- SECCIÓN 6: VISTAS Y BLADE -->
+        <div class="page-break"></div>
+        <h2>🎨 SECCIÓN 6: VISTAS Y TEMPLATE ENGINE BLADE</h2>
+
+        <h3>6.1 ¿Qué es Blade?</h3>
+        <div class="concept-box">
+            <strong>Blade</strong> es el motor de plantillas de Laravel. Permite crear páginas HTML dinámicas 
+            mezclando HTML con código PHP de forma segura y fácil.
+        </div>
+
+        <h3>6.2 Sintaxis Básica de Blade</h3>
+        <div class="code-block">
+{{-- Mostrar variable --}}
+{{ $alumno->nombre }}
+
+{{-- Condicionales --}}
+@if($alumno->activo)
+    <span class="badge bg-success">Activo</span>
+@else
+    <span class="badge bg-danger">Inactivo</span>
+@endif
+
+{{-- Bucles --}}
+@foreach($alumnos as $alumno)
+    <tr>
+        <td>{{ $alumno->nombre }}</td>
+        <td>{{ $alumno->email }}</td>
+    </tr>
+@endforeach
+        </div>
+
+        <h3>6.3 Layouts y Secciones</h3>
+        <div class="code-block">
+{{-- Layout principal (app.blade.php) --}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@yield('title')</title>
+</head>
+<body>
+    @include('layouts.sidebar')
+    <main>
+        @yield('content')
+    </main>
+</body>
+</html>
+
+{{-- Vista específica --}}
+@extends('layouts.app')
+
+@section('title', 'Lista de Alumnos')
+
+@section('content')
+    <h1>Alumnos</h1>
+    {{-- Contenido específico --}}
+@endsection
+        </div>
+
+        <!-- SECCIÓN 7: LÓGICA DE NEGOCIO DEL PROYECTO -->
+        <div class="page-break"></div>
+        <h2>💼 SECCIÓN 7: LÓGICA DE NEGOCIO DEL PROYECTO</h2>
+
+        <h3>7.1 ¿Qué es la Lógica de Negocio?</h3>
+        <div class="concept-box">
+            La <strong>lógica de negocio</strong> son las reglas que definen cómo debe funcionar la aplicación. 
+            Por ejemplo: "Un docente solo puede tener máximo 3 cursos activos".
+        </div>
+
+        <h3>7.2 Reglas de Negocio Implementadas</h3>
+        
+        <h4>📚 Gestión de Cursos</h4>
+        <div class="example">
+            <strong>Regla:</strong> Un docente solo puede tener máximo 3 cursos activos
+            <br><strong>Implementación:</strong> Validación en el controlador de cursos
+            <br><strong>Ubicación:</strong> CursoController.php
+        </div>
+
+        <h4>👥 Gestión de Alumnos</h4>
+        <div class="example">
+            <strong>Regla:</strong> Un alumno solo puede ser aprobado si tiene al menos 75% de asistencia
+            <br><strong>Implementación:</strong> Validación en InscripcionController
+            <br><strong>Ubicación:</strong> InscripcionController.php - método cambiarEstado()
+        </div>
+
+        <h4>📝 Gestión de Evaluaciones</h4>
+        <div class="example">
+            <strong>Regla:</strong> Solo se pueden crear evaluaciones para alumnos inscritos activamente
+            <br><strong>Implementación:</strong> Filtrado en AJAX y validación en controlador
+            <br><strong>Ubicación:</strong> EvaluacionController.php - método getAlumnosByCurso()
+        </div>
+
+        <h3>7.3 Ejemplo de Validación de Negocio</h3>
+        <div class="code-block">
+// En InscripcionController.php
+public function cambiarEstado(Inscripcion $inscripcion, $nuevoEstado)
+{
+    if ($nuevoEstado === 'aprobado') {
+        $porcentajeAsistencia = ($inscripcion->asistencias / 20) * 100;
+        if ($porcentajeAsistencia < 75) {
+            return redirect()->back()->with('error', 
+                'No se puede aprobar. Se requiere al menos 75% de asistencia.');
+        }
+    }
+    
+    $inscripcion->update(['estado' => $nuevoEstado]);
+    return redirect()->back()->with('success', 'Estado actualizado.');
+}
+        </div>
+
+        <!-- SECCIÓN 8: SISTEMA DE AUTENTICACIÓN Y ROLES -->
+        <div class="page-break"></div>
+        <h2>🔐 SECCIÓN 8: SISTEMA DE AUTENTICACIÓN Y ROLES</h2>
+
+        <h3>8.1 ¿Qué es la Autenticación?</h3>
+        <div class="concept-box">
+            La <strong>autenticación</strong> es el proceso de verificar quién es el usuario. 
+            Es como mostrar tu identificación para entrar a un lugar.
+        </div>
+
+        <h3>8.2 Roles del Sistema</h3>
+        <table>
+            <tr>
+                <th>Rol</th>
+                <th>Permisos</th>
+                <th>Funcionalidades</th>
+            </tr>
+            <tr>
+                <td>Admin</td>
+                <td>Acceso completo</td>
+                <td>Todo el sistema</td>
+            </tr>
+            <tr>
+                <td>Coordinador</td>
+                <td>Gestión de alumnos e inscripciones</td>
+                <td>Alumnos, inscripciones, evaluaciones</td>
+            </tr>
+            <tr>
+                <td>Docente</td>
+                <td>Solo sus cursos</td>
+                <td>Sus cursos, alumnos, evaluaciones, archivos</td>
+            </tr>
+        </table>
+
+        <h3>8.3 Middleware de Autenticación</h3>
+        <div class="code-block">
+// En routes/web.php
+Route::middleware(['auth', 'role.admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
+});
+
+// En controladores
+public function __construct()
+{
+    $this->middleware('auth');
+    $this->middleware('role.docente');
+}
+        </div>
+
+        <!-- SECCIÓN 9: AJAX Y INTERACTIVIDAD -->
+        <div class="page-break"></div>
+        <h2>🔄 SECCIÓN 9: AJAX Y INTERACTIVIDAD</h2>
+
+        <h3>9.1 ¿Qué es AJAX?</h3>
+        <div class="concept-box">
+            <strong>AJAX</strong> permite actualizar partes de una página web sin recargar toda la página. 
+            Mejora la experiencia del usuario haciéndola más fluida.
+        </div>
+
+        <h3>9.2 AJAX en el Proyecto</h3>
+        <div class="example">
+            <strong>Funcionalidad:</strong> Cargar alumnos por curso
+            <br><strong>Cuándo se usa:</strong> Al crear una evaluación
+            <br><strong>Beneficio:</strong> Solo muestra alumnos relevantes
+        </div>
+
+        <h3>9.3 Ejemplo de Código AJAX</h3>
+        <div class="code-block">
+// JavaScript en la vista
+fetch(`/evaluaciones/alumnos-by-curso?curso_id=${cursoId}`, {
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json',
+        'X-CSRF-TOKEN': token
+    }
+})
+.then(response => response.json())
+.then(alumnos => {
+    // Actualizar dropdown con los alumnos
+});
+
+// Controlador que responde
+public function getAlumnosByCurso(Request $request)
+{
+    $alumnos = Alumno::whereHas('inscripciones', function($query) use ($request) {
+        $query->where('curso_id', $request->curso_id)
+              ->where('estado', 'activo');
+    })->get();
+    
+    return response()->json($alumnos);
+}
+        </div>
+
+        <!-- SECCIÓN 10: PROBLEMAS RESUELTOS -->
+        <div class="page-break"></div>
+        <h2>🔧 SECCIÓN 10: PROBLEMAS RESUELTOS EN EL PROYECTO</h2>
+
+        <h3>10.1 Error 404 en AJAX</h3>
+        <div class="warning">
+            <strong>Problema:</strong> La ruta AJAX devolvía 404 (página no encontrada)
+            <br><strong>Causa:</strong> Las rutas específicas estaban después de las rutas resource
+            <br><strong>Solución:</strong> Reordenar las rutas en web.php
+        </div>
+
+        <h3>10.2 Inconsistencias en Base de Datos</h3>
+        <div class="warning">
+            <strong>Problema:</strong> Datos de prueba no cumplían las reglas de negocio
+            <br><strong>Causa:</strong> Docentes con más de 3 cursos, alumnos sin inscripciones
+            <br><strong>Solución:</strong> Crear migración para corregir datos
+        </div>
+
+        <h3>10.3 Problemas de Permisos</h3>
+        <div class="warning">
+            <strong>Problema:</strong> Coordinadores veían opciones que no podían usar
+            <br><strong>Causa:</strong> Menú no estaba condicionado por rol
+            <br><strong>Solución:</strong> Agregar condiciones en las vistas
+        </div>
+
+        <!-- SECCIÓN 11: CONFIGURACIÓN Y DESPLIEGUE -->
+        <div class="page-break"></div>
+        <h2>⚙️ SECCIÓN 11: CONFIGURACIÓN Y DESPLIEGUE</h2>
+
+        <h3>11.1 Archivo .env</h3>
+        <div class="concept-box">
+            El archivo <strong>.env</strong> contiene la configuración del proyecto:
+            <ul>
+                <li>Configuración de base de datos</li>
+                <li>Claves secretas</li>
+                <li>Configuración de correo</li>
+                <li>Variables de entorno</li>
+            </ul>
+        </div>
+
+        <h3>11.2 Configuración de Base de Datos</h3>
+        <div class="code-block">
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=gestion_cursos
+DB_USERNAME=root
+DB_PASSWORD=
+        </div>
+
+        <h3>11.3 Comandos Importantes</h3>
+        <table>
+            <tr>
+                <th>Comando</th>
+                <th>Propósito</th>
+            </tr>
+            <tr>
+                <td>php artisan migrate</td>
+                <td>Crear tablas en la base de datos</td>
+            </tr>
+            <tr>
+                <td>php artisan db:seed</td>
+                <td>Llenar base de datos con datos de prueba</td>
+            </tr>
+            <tr>
+                <td>php artisan serve</td>
+                <td>Iniciar servidor de desarrollo</td>
+            </tr>
+            <tr>
+                <td>php artisan route:list</td>
+                <td>Ver todas las rutas del proyecto</td>
+            </tr>
+        </table>
+
+        <!-- SECCIÓN 12: GLOSARIO -->
+        <div class="page-break"></div>
+        <h2>📚 SECCIÓN 12: GLOSARIO DE TÉRMINOS</h2>
+
+        <table>
+            <tr>
+                <th>Término</th>
+                <th>Definición</th>
+            </tr>
+            <tr>
+                <td>Framework</td>
+                <td>Conjunto de herramientas y librerías para desarrollar aplicaciones</td>
+            </tr>
+            <tr>
+                <td>MVC</td>
+                <td>Patrón de diseño que separa la lógica en Modelo, Vista y Controlador</td>
+            </tr>
+            <tr>
+                <td>Middleware</td>
+                <td>Filtros que se ejecutan antes de llegar al controlador</td>
+            </tr>
+            <tr>
+                <td>Eloquent</td>
+                <td>ORM de Laravel para interactuar con la base de datos</td>
+            </tr>
+            <tr>
+                <td>Blade</td>
+                <td>Motor de plantillas de Laravel</td>
+            </tr>
+            <tr>
+                <td>Migration</td>
+                <td>Archivo que define cambios en la estructura de la base de datos</td>
+            </tr>
+            <tr>
+                <td>Seeder</td>
+                <td>Archivo que llena la base de datos con datos de prueba</td>
+            </tr>
+            <tr>
+                <td>Route</td>
+                <td>Definición de una URL y qué función ejecutar</td>
+            </tr>
+            <tr>
+                <td>Controller</td>
+                <td>Clase que maneja las peticiones del usuario</td>
+            </tr>
+            <tr>
+                <td>Model</td>
+                <td>Clase que representa una tabla de la base de datos</td>
+            </tr>
+            <tr>
+                <td>View</td>
+                <td>Archivo que genera el HTML que ve el usuario</td>
+            </tr>
+            <tr>
+                <td>AJAX</td>
+                <td>Técnica para actualizar páginas sin recargarlas completamente</td>
+            </tr>
+        </table>
+
+        <!-- CONCLUSIÓN -->
+        <div class="page-break"></div>
+        <h2>🎯 CONCLUSIÓN</h2>
+
+        <div class="success">
+            <h3>✅ Lo que has aprendido:</h3>
+            <ul>
+                <li><strong>Conceptos fundamentales</strong> de Laravel y desarrollo web</li>
+                <li><strong>Estructura del proyecto</strong> y cómo se organiza el código</li>
+                <li><strong>Funcionamiento de las rutas</strong> y cómo conectan con los controladores</li>
+                <li><strong>Modelos y base de datos</strong> y cómo interactúan</li>
+                <li><strong>Lógica de negocio</strong> y cómo se implementan las reglas</li>
+                <li><strong>Sistema de autenticación</strong> y control de acceso</li>
+                <li><strong>AJAX</strong> y cómo mejora la experiencia del usuario</li>
+                <li><strong>Problemas comunes</strong> y cómo se resuelven</li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <h3>🚀 Próximos Pasos:</h3>
+            <ul>
+                <li>Practica creando pequeñas funcionalidades</li>
+                <li>Experimenta modificando el código existente</li>
+                <li>Lee la documentación oficial de Laravel</li>
+                <li>Únete a comunidades de desarrolladores</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3>📖 ¡FELICITACIONES!</h3>
+            <p>Has completado el manual de estudio del Sistema de Gestión de Cursos.</p>
+            <p><strong>Ahora tienes una base sólida para entender proyectos Laravel complejos.</strong></p>
+        </div>
+
+    </div>
+</body>
+</html> 

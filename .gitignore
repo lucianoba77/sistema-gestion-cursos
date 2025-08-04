@@ -1,0 +1,70 @@
+*.log
+.DS_Store
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+Homestead.json
+Homestead.yaml
+Thumbs.db
+
+# Archivos adicionales de seguridad
+.env.local
+.env.staging
+.env.testing
+*.key
+*.pem
+
+# Archivos de configuración local
+config/database.php
+config/mail.php
+
+# Archivos temporales
+*.tmp
+*.temp
+*.cache
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos de sesión
+storage/framework/sessions/*
+!storage/framework/sessions/.gitkeep
+
+# Archivos de cache
+storage/framework/cache/*
+!storage/framework/cache/.gitkeep
+
+# Archivos de vistas compiladas
+storage/framework/views/*
+!storage/framework/views/.gitkeep
