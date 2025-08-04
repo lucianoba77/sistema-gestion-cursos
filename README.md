@@ -42,7 +42,7 @@ Un sistema completo de gestión académica desarrollado con **Laravel 12** y **P
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/tu-usuario/sistema-gestion-cursos.git
+git clone https://github.com/lucianoba77/sistema-gestion-cursos.git
 cd sistema-gestion-cursos
 ```
 
@@ -209,9 +209,9 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 👨‍💻 Autor
 
-**Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
+**Luciano Barrenechea**
+- GitHub: [@lucianoba77](https://github.com/lucianoba77)
+- LinkedIn: [Luciano Barrenechea](https://linkedin.com/in/luciano-barrenechea)
 
 ## 🙏 Agradecimientos
 

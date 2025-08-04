@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Cursos - Luciano Barrenechea</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-section {
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .tech-badge {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 0.9em;
+        }
+        .screenshot {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 20px 0;
+        }
+        .btn-custom {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            color: white;
+        }
+        .stats-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <i class="fas fa-graduation-cap me-3"></i>
+                        Sistema de Gestión de Cursos
+                    </h1>
+                    <p class="lead mb-4">
+                        Un sistema completo de gestión académica desarrollado con Laravel 12 y PHP 8.4, 
+                        diseñado para administrar cursos, docentes, alumnos, inscripciones y evaluaciones.
+                    </p>
+                    <div class="mb-4">
+                        <span class="tech-badge"><i class="fab fa-laravel me-2"></i>Laravel 12</span>
+                        <span class="tech-badge"><i class="fab fa-php me-2"></i>PHP 8.4</span>
+                        <span class="tech-badge"><i class="fab fa-bootstrap me-2"></i>Bootstrap 5</span>
+                        <span class="tech-badge"><i class="fab fa-js me-2"></i>JavaScript</span>
+                        <span class="tech-badge"><i class="fas fa-database me-2"></i>MySQL</span>
+                    </div>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="https://github.com/lucianoba77/sistema-gestion-cursos" class="btn btn-custom">
+                            <i class="fab fa-github me-2"></i>Ver en GitHub
+                        </a>
+                        <a href="#demo" class="btn btn-custom">
+                            <i class="fas fa-play me-2"></i>Ver Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-users fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="text-center mb-3">Gestión de Usuarios</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Sistema de roles (Admin, Coordinador, Docente)</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Autenticación segura con middleware</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Control de acceso granular</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-book fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="text-center mb-3">Gestión Académica</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Cursos con estados y cupos</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Sistema de inscripciones</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Evaluaciones y asistencias</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-chart-line fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="text-center mb-3">Reportes y Analytics</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Dashboard con métricas en tiempo real</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Filtros y búsquedas avanzadas</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Estadísticas por rol</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3 class="display-6 fw-bold">6</h3>
+                    <p class="mb-0">Modelos Eloquent</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3 class="display-6 fw-bold">15+</h3>
+                    <p class="mb-0">Controladores</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3 class="display-6 fw-bold">50+</h3>
+                    <p class="mb-0">Vistas Blade</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3 class="display-6 fw-bold">100%</h3>
+                    <p class="mb-0">Responsive</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screenshots Section -->
+    <div class="container py-5" id="demo">
+        <h2 class="text-center text-white mb-5">Capturas de Pantalla</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="feature-card">
+                    <h5 class="text-center mb-3">Dashboard de Administrador</h5>
+                    <img src="../public/images/screenshots/Dashboard.png" alt="Dashboard" class="img-fluid screenshot">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-card">
+                    <h5 class="text-center mb-3">Gestión de Cursos</h5>
+                    <img src="../public/images/screenshots/Gestion_Cursos.png" alt="Gestión de Cursos" class="img-fluid screenshot">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-6">
+                <div class="feature-card">
+                    <h5 class="text-center mb-3">Sistema de Evaluaciones</h5>
+                    <img src="../public/images/screenshots/Buscar_Evaluaciones.png" alt="Evaluaciones" class="img-fluid screenshot">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-card">
+                    <h5 class="text-center mb-3">Gestión de Archivos</h5>
+                    <img src="../public/images/screenshots/Gestion_Archivos.png" alt="Archivos" class="img-fluid screenshot">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Installation Section -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="feature-card">
+                    <h3 class="text-center mb-4">Instalación Rápida</h3>
+                    <div class="bg-dark text-light p-4 rounded">
+                        <pre><code># Clonar repositorio
+git clone https://github.com/lucianoba77/sistema-gestion-cursos.git
+cd sistema-gestion-cursos
+
+# Instalar dependencias
+composer install
+npm install
+
+# Configurar entorno
+cp .env.example .env
+php artisan key:generate
+
+# Configurar base de datos
+php artisan migrate
+php artisan db:seed
+
+# Iniciar servidor
+php artisan serve</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-white py-4">
+        <div class="container">
+            <p class="mb-2">
+                <strong>Sistema de Gestión de Cursos</strong> - Desarrollado por 
+                <a href="https://github.com/lucianoba77" class="text-white">Luciano Barrenechea</a>
+            </p>
+            <p class="mb-0">
+                <i class="fab fa-github me-2"></i>
+                <a href="https://github.com/lucianoba77/sistema-gestion-cursos" class="text-white">Ver en GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
