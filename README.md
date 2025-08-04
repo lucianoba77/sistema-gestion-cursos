@@ -88,11 +88,11 @@ php artisan serve
 ## 👤 Usuarios de Prueba
 
 ### Administrador
-- **Email:** admin@sistema.com
+- **Email:** admin@gmail.com
 - **Contraseña:** password
 
 ### Coordinador
-- **Email:** coordinador@sistema.com
+- **Email:** coordinador1@gmail.com
 - **Contraseña:** password
 
 ### Docente
@@ -120,15 +120,15 @@ app/
 ### Rutas Organizadas
 ```php
 // Rutas por rol
-Route::prefix('admin')->middleware(['auth', 'role.admin'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['role.admin'])->group(function () {
     // Rutas de administrador
 });
 
-Route::prefix('coordinador')->middleware(['auth', 'role.coordinador'])->group(function () {
+Route::prefix('coordinador')->name('coordinador.')->middleware(['role.coordinador'])->group(function () {
     // Rutas de coordinador
 });
 
-Route::prefix('docente')->middleware(['auth', 'role.docente'])->group(function () {
+Route::prefix('docente')->name('docente.')->middleware(['role.docente'])->group(function () {
     // Rutas de docente
 });
 ```
@@ -209,9 +209,9 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 👨‍💻 Autor
 
-**Luciano Barrenechea**
+**Julio Luciano Barrenechea**
 - GitHub: [@lucianoba77](https://github.com/lucianoba77)
-- LinkedIn: [Luciano Barrenechea](https://www.linkedin.com/in/juliolbarrenechea/)
+- LinkedIn: [Julio Luciano Barrenechea](https://www.linkedin.com/in/juliolbarrenechea/)
 
 ## 🙏 Agradecimientos
 
