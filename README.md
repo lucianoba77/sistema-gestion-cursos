@@ -211,7 +211,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 **Luciano Barrenechea**
 - GitHub: [@lucianoba77](https://github.com/lucianoba77)
-- LinkedIn: [Luciano Barrenechea](https://linkedin.com/in/luciano-barrenechea)
+- LinkedIn: [Luciano Barrenechea](https://www.linkedin.com/in/juliolbarrenechea/)
 
 ## 🙏 Agradecimientos
 
